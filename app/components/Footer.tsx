@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
 
         {/* Center: Scroll to Top */}
-        <div onClick={scrollToTop} className="cursor-pointer">
+        <div onClick={scrollToTop} className="cursor-pointer align-">
           <p className="text-gray-500 font-semibold">Fast Travel:</p>
           <p className="font-bold hover:underline">Go Back to Top</p>
         </div>
