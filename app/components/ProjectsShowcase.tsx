@@ -39,7 +39,7 @@ export default function ProjectsShowcase() {
       </div>
 
       {/* Project List - Bottom Left */}
-      <div className="absolute bottom-20 left-6 w-full md:w-1/2">
+      <div className="absolute bottom-44 left-6 w-full md:w-1/2">
         <ul className="space-y-6 text-black">
           {projects.map((project, i) => (
             <li
