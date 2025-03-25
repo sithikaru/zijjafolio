@@ -8,14 +8,15 @@ interface Project {
   title: string;
   stack: string;
   preview: string;
+  link: string;
 }
 
 const projects: Project[] = [
-  { id: 1, title: 'Bondtime', stack: 'Flutter + Node.js + AI', preview: '/bondtime.png' },
-  { id: 2, title: 'Leo Club of IIT', stack: 'Next.js + Firebase', preview: 'leo.png' },
-  { id: 3, title: 'SkillUp 3.0', stack: 'Next.js + CMS', preview: '/img/projects/skillup.jpg' },
-  { id: 4, title: 'CollabTrack', stack: 'Next.js + Kanban UI', preview: '/img/projects/collab.jpg' },
-  { id: 5, title: 'Tide', stack: 'HTML/CSS + JS', preview: '/img/projects/tide.jpg' },
+  { id: 1, title: 'Bondtime', stack: 'Flutter + Node.js + AI', preview: '/bondtime.jpeg', link: 'https://bondtimeapp.com' },
+  { id: 2, title: 'Leo Club of IIT', stack: 'Next.js + Firebase', preview: '/leo.png', link: 'https://leoiit.org' },
+  { id: 3, title: 'SkillUp 3.0', stack: 'Next.js + CMS', preview: '/skillup.png', link: 'https://skillup.leoiit.org' },
+  { id: 4, title: 'CollabTrack', stack: 'Next.js + Kanban UI', preview: '/collabtrack.png', link: 'https://collabtrack.vercel.app/' },
+  { id: 5, title: 'Tide', stack: 'HTML/CSS + JS', preview: '/tide.png', link: 'https://sithikaru.github.io/tide/home.html' },
 ];
 
 export default function ProjectsShowcase() {
@@ -26,7 +27,7 @@ export default function ProjectsShowcase() {
       {/* Image Preview */}
       <div className="absolute top-0 right-0 w-full md:w-1/2 h-full flex items-center justify-center">
         {hoveredProject && (
-          <div className="w-[60%] aspect-[3/4] relative border shadow-md">
+          <div className="w-[60%] aspect-[3/4] relative border">
             <Image
               src={hoveredProject.preview}
               alt={hoveredProject.title}
@@ -45,6 +46,7 @@ export default function ProjectsShowcase() {
               key={project.id}
               className="flex justify-between items-center border-b pb-4 hover:cursor-pointer group"
               onMouseEnter={() => setHoveredProject(project)}
+              onClick={() => window.open(project.link, '_blank')}
             >
               <div className="flex items-center gap-6">
                 <span className="text-base text-gray-400">{String(i + 1).padStart(2, '0')}</span>
